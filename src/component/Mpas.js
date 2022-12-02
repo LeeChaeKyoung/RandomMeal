@@ -1,8 +1,11 @@
 /* global kakao */
-import React from "react";
+import React ,{useEffect,useState}from "react";
 const {kakao} = window;
 
-function Maps() {
+const Mpas= () => {
+    useEffect(() =>{
+
+    })
     /**마커를 담을 배열 */
     let markers = [];
 
@@ -14,7 +17,7 @@ function Maps() {
             };
 
     /** 지도 생성 */
-    let map = new kakao.maps.Map(mapContainer, mapOption);
+    const map = new kakao.maps.Map(mapContainer, mapOption);
 
     /** 장소검색 객체 생성 */
     let ps = new kakao.maps.services.Places();
@@ -180,7 +183,7 @@ function Maps() {
                 el.innerHTML = i;
 
                 if (i===pagination.current) {
-                    el.className = 'on';
+                    el.className = 'on'; 
                 } else {
                     el.onclick = (function(i) {
                         return function() {
@@ -231,4 +234,4 @@ function Maps() {
   );
 }
 
-export default Maps;
+export default Mpas;
